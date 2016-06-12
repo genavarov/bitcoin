@@ -19,8 +19,8 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/bitcoin/bitcoin.git"
-  "dir": "bitcoin"
+- "url": "https://github.com/genavarov/bitcoind.git"
+  "dir": "bitcoind"
 files: []
 script: |
   WRAP_DIR=$HOME/wrapped
