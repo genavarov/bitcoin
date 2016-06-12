@@ -28,8 +28,8 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/genavarov/bitcoind.git"
-  "dir": "bitcoind"
+- "url": "https://github.com/genavarov/bitcoin.git"
+  "dir": "bitcoin"
 files:
 - "MacOSX10.9.sdk.tar.gz"
 script: |
