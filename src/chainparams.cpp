@@ -78,7 +78,8 @@ public:
 		consensus.BIP34Hash = uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8");
         //consensus.BIP34Height = 128;
         //consensus.BIP34Hash = uint256S("0xdf8cc1714e29db345f0e6ea0d141cc7b3b1f6dc1740aea308003832fb621c923");
-        consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+		consensus.powLimit = uint256S("00000000ffff0000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -114,11 +115,12 @@ public:
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1465236366, 456531, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8"));
         assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31")); //test
 
+		vSeeds.push_back(CDNSSeedData("127.0.0.1", "192.168.1.100"));
 		vSeeds.push_back(CDNSSeedData("192.168.1.103", "192.168.1.107"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
@@ -202,6 +204,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 		// nodes with support for servicebits filtering should be at the top
+		vSeeds.push_back(CDNSSeedData("127.0.0.1", "192.168.1.100"));
 		vSeeds.push_back(CDNSSeedData("192.168.1.103", "192.168.1.107"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,48);
