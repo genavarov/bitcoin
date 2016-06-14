@@ -70,7 +70,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 2100;
+        consensus.nSubsidyHalvingInterval = 210;
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
@@ -117,7 +117,7 @@ public:
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 5000 * COIN);
+        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000000e9ed689bd6fb21704998c0c4482a3de238f908125883fd5356086f0e"));
         assert(genesis.hashMerkleRoot == uint256S("0xb0b1279cf3026f84e0a0dd9e4737933e490682fb8f1b350bb7d7b14720fdc5f2")); //test
@@ -205,7 +205,7 @@ public:
 		//assert(consensus.hashGenesisBlock == uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8"));
 		//assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31"));
 
-        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 6400 * COIN);
+        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000000e9ed689bd6fb21704998c0c4482a3de238f908125883fd5356086f0e"));
         assert(genesis.hashMerkleRoot == uint256S("0xb0b1279cf3026f84e0a0dd9e4737933e490682fb8f1b350bb7d7b14720fdc5f2")); //test
@@ -288,7 +288,7 @@ public:
         nDefaultPort = 18444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1465832000, 0, 0x207fffff, 1, 6400 * COIN);
+        genesis = CreateGenesisBlock(1465236368, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x3e1904a8f1273d796c9c14004ab79311b2f9f2cb9ca345d948dbe853e0b7d912"));
         assert(genesis.hashMerkleRoot == uint256S("0xb0b1279cf3026f84e0a0dd9e4737933e490682fb8f1b350bb7d7b14720fdc5f2"));
