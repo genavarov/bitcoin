@@ -90,11 +90,11 @@ public:
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1465865000; // 06/06/2016 @ 6:06pm (UTC)
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1454963400; // 02/08/2016 @ 8:30pm (UTC)
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1470096000; // 08/02/2016 @ 12:00am (UTC)
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1454963401; // 02/08/2016 @ 8:30pm (UTC)
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1470096000; // 08/02/2016 @ 12:00am (UTC)
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1493596800; // May 1st, 2017
 
         /**
@@ -177,8 +177,8 @@ public:
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1465236366; // 06/06/2016 @ 6:06pm (UTC) =1199145601;  January 1, 2008
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1454963400; // 02/08/2016 @ 8:30pm (UTC) =1230767999;  December 31, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1465865000; // 06/06/2016 @ 6:06pm (UTC) =1199145601;  January 1, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1470096000; // 08/02/2016 @ 12:00am (UTC) =1230767999;  December 31, 2008
 
         // Deployment of BIP68, BIP112, and BIP113.
         //consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
@@ -205,7 +205,7 @@ public:
 		//assert(consensus.hashGenesisBlock == uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8"));
 		//assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31"));
 
-        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 5000 * COIN);
+        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000000e9ed689bd6fb21704998c0c4482a3de238f908125883fd5356086f0e"));
         assert(genesis.hashMerkleRoot == uint256S("0xb0b1279cf3026f84e0a0dd9e4737933e490682fb8f1b350bb7d7b14720fdc5f2")); //test
@@ -288,7 +288,7 @@ public:
         nDefaultPort = 18444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1465236368, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1465864000, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x3e1904a8f1273d796c9c14004ab79311b2f9f2cb9ca345d948dbe853e0b7d912"));
         assert(genesis.hashMerkleRoot == uint256S("0xb0b1279cf3026f84e0a0dd9e4737933e490682fb8f1b350bb7d7b14720fdc5f2"));
