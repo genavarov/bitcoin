@@ -51,7 +51,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "The Madness of America - The New York Times 06/06/2016 The candidacy of Donald Trump";
-    const CScript genesisOutputScript = CScript() << ParseHex("047b8c32830f383bde7872ef0cbf7e05ea8594f80104aa15b9a219749da4ddfdcf8c2f8fd6fee1e7c2068c533f120eab6871612e5b40a5731b4748179535ecffce") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("04c012eb4585bffc0c400b4dc498d18cfddd814eb5185b807883f63b74172e2e743473923b667108daf5d3d1e2e7f1cdc49fdba36a60d87a202e42aa04780c5a8e") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -89,7 +89,7 @@ public:
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1465236366; // 06/06/2016 @ 6:06pm (UTC)
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1465865000; // 06/06/2016 @ 6:06pm (UTC)
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1454963400; // 02/08/2016 @ 8:30pm (UTC)
 
         // Deployment of BIP68, BIP112, and BIP113.
@@ -117,10 +117,10 @@ public:
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, NULL);
+        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8"));
-        assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31")); //test
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000e9ed689bd6fb21704998c0c4482a3de238f908125883fd5356086f0e"));
+        assert(genesis.hashMerkleRoot == uint256S("0xb0b1279cf3026f84e0a0dd9e4737933e490682fb8f1b350bb7d7b14720fdc5f2")); //test
 
 		vSeeds.push_back(CDNSSeedData("127.0.0.1", "192.168.1.100"));
 		vSeeds.push_back(CDNSSeedData("192.168.1.103", "192.168.1.107"));
@@ -141,7 +141,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8")),
+            ( 0, uint256S("0x00000000e9ed689bd6fb21704998c0c4482a3de238f908125883fd5356086f0e")),
             1465236366, // * UNIX timestamp of last checkpoint block
             0,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -200,7 +200,7 @@ public:
         nMaxTipAge = 0x7fffffff;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, NULL);
+        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8"));
         assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31"));
@@ -272,7 +272,7 @@ public:
         nDefaultPort = 18444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1465236368, 0, 0x207fffff, 1, NULL);
+        genesis = CreateGenesisBlock(1465236368, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x3650e7f70909fb5fc20ebb5935ec2ea44bb0595f086fd2a85951d722055e1068"));
         assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31"));
