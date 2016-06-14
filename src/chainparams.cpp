@@ -117,7 +117,7 @@ public:
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 500 * COIN);
+        genesis = CreateGenesisBlock(1465865000, 959009949, 0x1d00ffff, 1, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x00000000e9ed689bd6fb21704998c0c4482a3de238f908125883fd5356086f0e"));
         assert(genesis.hashMerkleRoot == uint256S("0xb0b1279cf3026f84e0a0dd9e4737933e490682fb8f1b350bb7d7b14720fdc5f2")); //test
