@@ -74,8 +74,10 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-		consensus.BIP34Height = 0; //testing only
-		consensus.BIP34Hash = uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8");
+        consensus.BIP34Height = -1; // BIP34 has not necessarily activated
+        consensus.BIP34Hash = uint256();
+		//consensus.BIP34Height = 0; //testing only
+		//consensus.BIP34Hash = uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8");
         //consensus.BIP34Height = 128;
         //consensus.BIP34Hash = uint256S("0xdf8cc1714e29db345f0e6ea0d141cc7b3b1f6dc1740aea308003832fb621c923");
         //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -115,7 +117,7 @@ public:
         nMaxTipAge = 24 * 60 * 60;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, genesisReward = NULL);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8"));
         assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31")); //test
@@ -160,8 +162,10 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 51;
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
-		consensus.BIP34Height = 0;
-		consensus.BIP34Hash = uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8");
+        consensus.BIP34Height = -1; // BIP34 has not necessarily activated
+        consensus.BIP34Hash = uint256();
+		//consensus.BIP34Height = 0;
+		//consensus.BIP34Hash = uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8");
         //consensus.BIP34Height = 128;
         //consensus.BIP34Hash = uint256S("0xdf8cc1714e29db345f0e6ea0d141cc7b3b1f6dc1740aea308003832fb621c923");
         //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -196,7 +200,7 @@ public:
         nMaxTipAge = 0x7fffffff;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1465236366, 456531, 0x1e0ffff0, 1, genesisReward = NULL);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8"));
         assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31"));
@@ -268,7 +272,7 @@ public:
         nDefaultPort = 18444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1465236368, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1465236368, 0, 0x207fffff, 1, genesisReward = NULL);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x3650e7f70909fb5fc20ebb5935ec2ea44bb0595f086fd2a85951d722055e1068"));
         assert(genesis.hashMerkleRoot == uint256S("0x59c5e78435ac6d0e6a08aa1d0e92ac5f48e890ae2a0bdef1a8e7349e05b4fe31"));
