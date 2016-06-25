@@ -70,7 +70,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 210;
+        consensus.nSubsidyHalvingInterval = 210000;
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
@@ -80,8 +80,8 @@ public:
 		//consensus.BIP34Hash = uint256S("0xe5a182fb813fced089a34e5f7bffc406b8e47c14621c492cd0d838c308f4a7b8");
         //consensus.BIP34Height = 128;
         //consensus.BIP34Hash = uint256S("0xdf8cc1714e29db345f0e6ea0d141cc7b3b1f6dc1740aea308003832fb621c923");
-        //consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-		consensus.powLimit = uint256S("00000000ffff0000000000000000000000000000000000000000000000000000");
+        consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+		//consensus.powLimit = uint256S("00000000ffff0000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -158,7 +158,7 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 210;
+        consensus.nSubsidyHalvingInterval = 210000;
         consensus.nMajorityEnforceBlockUpgrade = 51;
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
